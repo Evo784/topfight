@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPFIGHT | ACCÈS ADMINISTRATEUR</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <div class="admin-container">
+        <!-- PAGE DE LOGIN -->
+        <div id="login-page" class="page-active">
+            <div class="login-wrapper">
+                <header class="login-header">
+                    <h1 class="glitch-text">SYSTÈME_ROOT</h1>
+                    <p class="system-status">[ AUTHENTIFICATION_REQUISE ]</p>
+                </header>
+
+                <div class="login-box">
+                    <div class="terminal-cursor">
+                        <span class="cursor-line">></span>
+                        <input type="password" id="admin-password" class="terminal-input" placeholder="ENTREZ LE CODE D'ACCÈS..." spellcheck="false" autocomplete="off">
+                    </div>
+                    <button id="login-btn" class="burn-btn">VALIDER_ACCÈS</button>
+                    <button id="back-btn" class="back-btn">← RETOUR</button>
+                </div>
+
+                <p class="login-footer">ACCÈS RÉSERVÉ AUX ADMINISTRATEURS</p>
+            </div>
+        </div>
+
+        <!-- PAGE DASHBOARD ADMIN -->
+        <div id="admin-page" class="hidden">
+            <header class="admin-header">
+                <div class="header-content">
+                    <h1 class="glitch-text">LOG_PILOTES_INSCRITS</h1>
+                    <p class="header-status">[ SYSTÈME ACTIF ]</p>
+                </div>
+                <button id="logout-btn" class="burn-btn logout-btn">DÉCONNEXION</button>
+            </header>
+
+            <div class="admin-main">
+                <div id="admin-list" class="admin-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+:root {
+    --bg-dark: #050505;
+    --neon-green: #00d588;
+    --neon-red: #ff003c;
+    --grid-color: rgba(0, 255, 65, 0.05);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-dark);
+    background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: white;
+    font-family: 'Chakra Petch', sans-serif;
+    min-height: 100vh;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.admin-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+/* === PAGE DE LOGIN === */
+#login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#login-page.hidden {
+    display: none;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 20px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.login-header h1 {
+    font-size: 2.5rem;
+    color: var(--neon-green);
+    margin-bottom: 10px;
+    font-style: italic;
+    letter-spacing: 3px;
+}
+
+.system-status {
+    color: var(--neon-red);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.login-box {
+    background: rgba(10, 10, 10, 0.9);
+    border: 2px solid var(--neon-green);
+    padding: 40px;
+    clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
+    margin-bottom: 20px;
+}
+
+.terminal-cursor {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+}
+
+.cursor-line {
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--neon-green);
+    font-family: 'Chakra Petch', monospace;
+    font-size: 1rem;
+    outline: none;
+    letter-spacing: 1px;
+}
+
+.terminal-input::placeholder {
+    color: #555;
+}
+
+.terminal-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    -webkit-text-fill-color: var(--neon-green);
+}
+
+.burn-btn {
+    width: 100%;
+    background: none;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    clip-path: polygon(2% 0, 100% 0, 98% 100%, 0 100%);
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.burn-btn:hover {
+    background: var(--neon-green);
+    color: black;
+}
+
+.back-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #333;
+    color: #999;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+.login-footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* === PAGE DASHBOARD ADMIN === */
+#admin-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#admin-page.hidden {
+    display: none;
+}
+
+.admin-header {
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 2px solid var(--neon-green);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    color: var(--neon-green);
+    margin-bottom: 5px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.header-status {
+    color: var(--neon-red);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.logout-btn {
+    width: auto;
+    padding: 12px 25px;
+    font-size: 0.75rem;
+}
+
+.admin-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px;
+    padding-top: 20px;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.pilot-card {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 25px;
+    border-left: 4px solid var(--neon-green);
+    transition: 0.3s;
+}
+
+.pilot-card:hover {
+    border-color: var(--neon-green);
+}
+
+.pilot-card h3 {
+    color: var(--neon-green);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.pilot-card p {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.tag {
+    color: var(--neon-red);
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.tech-specs {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #222;
+}
+
+
+
+.hidden {
+    display: none !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .admin-main {
+        padding: 20px;
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .login-box {
+        padding: 25px;
+    }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-green);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00ff9f;
+}

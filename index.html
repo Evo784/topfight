@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOPFIGHT | PROJET TOUGE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <div class="container">
+        <form id="topfight-form">
+            <header class="main-header">
+                <div class="logo-area">
+                    <img src="Top-fight-logo copy.png" alt="TOPFIGHT" class="main-logo">
+                    <span class="japanese-tag">時が経てば分かる</span>
+                </div>
+                <img src="Confidential-logo copy.png" alt="CONFIDENTIEL" class="confidential-stamp">
+            </header>
+
+            <div class="telemetry-bar">
+                <span>STATUT_SYSTÈME: ACTIF</span>
+                <span>TYPE: MOUNTAIN_PASS</span>
+            </div>
+
+            <div class="form-grid">
+                <section class="form-section">
+                    <h2 class="section-title">ENREGISTREMENT_PILOTE</h2>
+                    <div class="input-group">
+                        <label>ID_INSTAGRAM*</label>
+                        <input type="text" name="instagram" placeholder="@votre_compte" required>
+                    </div>
+                    <div class="input-group">
+                        <label>COMM_EMAIL*</label>
+                        <input type="email" name="email" placeholder="pilote@mail.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label>EXPÉRIENCE_TOUGE</label>
+                        <input type="text" name="experience_touge" placeholder="Ex: 2 ans / Sorties nocturnes">
+                    </div>
+                    <div class="choice-section">
+                        <label>TYPE_DE_MISSION :</label>
+                        <div class="options-grid">
+                            <label class="radio-card">
+                                <input type="radio" name="interet" value="Time Attack" required>
+                                <span class="radio-label">TIME_ATTACK</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="interet" value="Battle">
+                                <span class="radio-label">BATTLE</span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="interet" value="Les deux">
+                                <span class="radio-label">LES_DEUX</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2 class="section-title">SPÉCIFICATIONS_MACHINE</h2>
+                    <div class="input-group">
+                        <label>MODÈLE_VÉHICULE</label>
+                        <input type="text" name="modele_voiture" placeholder="Ex: Silvia S15 / M3 E46">
+                    </div>
+                    <div class="input-group">
+                        <label>DÉTAILS_MOTEUR [PUISSANCE/MODS]</label>
+                        <textarea name="prep_moteur" placeholder="Interne, Turbo, Gestion..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>RÉGLAGES_CHÂSSIS [SUSPENSION/PNEUS]</label>
+                        <textarea name="prep_chassis" placeholder="Combinés, Semi-slicks, Géo..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label>ESTHÉTIQUE [LIVRÉE/KIT]</label>
+                        <textarea name="prep_esthetique" placeholder="Kit carrosserie, Jantes..."></textarea>
+                    </div>
+                </section>
+            </div>
+
+            <button type="submit" class="burn-btn">INITIALISER_DONNÉES</button>
+            <p class="warning-text">DOCUMENT CONFIDENTIEL // ÉDITION LIMITÉE</p>
+
+            <div class="countdown-container">
+                <p class="countdown-label">OUVERTURE_DISCORD_OFFICIEL</p>
+                <div id="countdown-form" class="countdown-timer">
+                    <div class="countdown-item">
+                        <span id="days-form" class="countdown-value">0</span>
+                        <span class="countdown-label-small">JOURS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours-form" class="countdown-value">0</span>
+                        <span class="countdown-label-small">HEURES</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes-form" class="countdown-value">0</span>
+                        <span class="countdown-label-small">MIN</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds-form" class="countdown-value">0</span>
+                        <span class="countdown-label-small">SEC</span>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="admin-trigger-zone">
+            <button id="access-admin" class="admin-access-btn">ACCÈS_SYSTÈME_ROOT</button>
+        </div>
+
+        <div id="success-message" class="hidden">
+            <div class="success-box">
+                <h1 class="glitch-text">DONNÉES_TRANSMISES</h1>
+                <p>INSCRIPTION VALIDÉE. ATTENDS LE SIGNAL.</p>
+                
+                <div class="countdown-container">
+                    <p class="countdown-label">OUVERTURE_DISCORD_OFFICIEL</p>
+                    <div id="countdown" class="countdown-timer">
+                        <div class="countdown-item">
+                            <span id="days" class="countdown-value">0</span>
+                            <span class="countdown-label-small">JOURS</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours" class="countdown-value">0</span>
+                            <span class="countdown-label-small">HEURES</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes" class="countdown-value">0</span>
+                            <span class="countdown-label-small">MIN</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds" class="countdown-value">0</span>
+                            <span class="countdown-label-small">SEC</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="quit-text">tu peux quitter cette page</p>
+            </div>
+        </div>
+
+        <div id="admin-view" class="hidden">
+            <h2 class="section-title">LOG_PILOTES_INSCRITS</h2>
+            <div id="admin-list" class="admin-grid"></div>
+            <button onclick="window.location.reload()" class="burn-btn outline">DÉCONNEXION</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
