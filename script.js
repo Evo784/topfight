@@ -49,9 +49,9 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
-// Compteur à rebours jusqu'au 16 mai 2026
+// Compteur à rebours jusqu'au 16 mars 2026
 function startCountdown() {
-    const targetDate = new Date('2026-05-16T00:00:00').getTime();
+    const targetDate = new Date('2026-03-16T00:00:00').getTime();
     
     function updateCountdown() {
         const now = new Date().getTime();
@@ -82,7 +82,7 @@ function startCountdown() {
 
 // Lancer le compteur sur la page contact aussi
 function startCountdownForm() {
-    const targetDate = new Date('2026-01-05T00:00:00').getTime();
+    const targetDate = new Date('2026-03-16T00:00:00').getTime();
     
     function updateCountdown() {
         const now = new Date().getTime();
